@@ -10,7 +10,7 @@
 <meta property="og:image" content="fotos/retrato.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* ======================================================
    CORES E FONTES: mude aqui para alterar o site inteiro
@@ -22,8 +22,8 @@
   --vinho:#8E1B23;
   --cinza:#5E5B57;
   --linha:#D9D6D0;
-  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
-  --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Jost","Futura","Century Gothic",Arial,sans-serif;
+  --sans:"Jost","Futura","Century Gothic",Arial,sans-serif;
   --larg:1200px;
   --topo:64px;
 }
@@ -185,6 +185,22 @@ figcaption{font-size:.8rem;color:var(--cinza);margin-top:.4rem;line-height:1.4}
 @media (max-width:820px){.contato-grade{grid-template-columns:1fr}.contato figure{max-width:260px}}
 footer{background:var(--tinta);color:#a9a49c;font-size:.85rem;padding-bottom:2.2rem}
 footer .envelope{border-top:1px solid #3a3836;padding-top:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+/* ---------- ajustes da fonte Jost ---------- */
+.marca{font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem}
+.capa h1{font-weight:300;text-transform:uppercase;letter-spacing:.08em;line-height:1.02;font-size:clamp(2.6rem,7vw,5.6rem)}
+.capa h1 span:last-child{font-style:normal;padding-left:0}
+.posicionamento strong{font-weight:400;font-size:1.35em;letter-spacing:.02em}
+.titulo{font-weight:300;letter-spacing:.01em}
+.sobre p{font-weight:400}
+.bloco-cabeca h3{font-style:normal;font-weight:300}
+.case-cabeca h4{font-weight:400;letter-spacing:.01em}
+.resumo{font-style:normal;font-weight:400;color:var(--cinza)}
+.materia h3{font-weight:500;font-size:1.25rem}
+.ficha h3{font-style:normal;font-weight:400;font-size:1.35rem}
+.ano{font-weight:400}
+.contato h2{font-weight:300}
+.contato .email{font-style:normal;font-weight:300}
 </style>
 </head>
 <body>
@@ -616,7 +632,7 @@ footer .envelope{border-top:1px solid #3a3836;padding-top:1.2rem;display:flex;ju
 <!-- ==================== MATÉRIAS ==================== -->
 <section class="secao envelope" id="materias" aria-labelledby="t-mat">
   <h2 class="titulo" id="t-mat">Matérias</h2>
-  <p class="materias-intro">Uma seleção de textos publicados, de comportamento a jornalismo de dados, em português e em italiano.</p>
+  <p class="materias-intro">Uma seleção de textos e vídeos publicados, de comportamento a jornalismo de dados, em português e em italiano.</p>
   <div class="materias">
     <article class="materia">
       <a class="capa-materia" href="https://agenciamural.org.br/microapartamentos-mulheres-periferias-sp/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img style="object-position:left center" src="fotos/materia-microapartamentos.jpg" alt="Print da reportagem sobre microapartamentos na Agência Mural" loading="lazy"></a>
@@ -659,6 +675,13 @@ footer .envelope{border-top:1px solid #3a3836;padding-top:1.2rem;display:flex;ju
       <h3><a href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener">Sem a formação de novos caminhoneiros, o Brasil terá um problema em cinco anos, diz ministro</a></h3>
       <p>Entrevista exclusiva com o ministro dos Transportes, George Santoro, conduzida ao lado da editora-chefe Giovanna Riato e publicada em texto, vídeo e cortes verticais.</p>
       <a class="ler" href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener" aria-label="Ler a matéria: Sem a formação de novos caminhoneiros, o Brasil terá um problema em cinco anos, diz ministro">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia foto" href="https://www.youtube.com/watch?v=wT6R_NRO86A" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/estadao-review.jpg" alt="Pietra apresentando o review da Mercedes-Benz Sprinter para o Jornal do Carro" loading="lazy"></a>
+      <p class="meta"><b>Review em vídeo</b><br>Estadão, Jornal do Carro, YouTube</p>
+      <h3><a href="https://www.youtube.com/watch?v=wT6R_NRO86A" target="_blank" rel="noopener">Review da Mercedes-Benz Sprinter</a></h3>
+      <p>Apresentação em vídeo do utilitário da Mercedes-Benz para o canal do Jornal do Carro no YouTube, com roteiro e condução na frente da câmera.</p>
+      <a class="ler" href="https://www.youtube.com/watch?v=wT6R_NRO86A" target="_blank" rel="noopener" aria-label="Assistir ao review da Mercedes-Benz Sprinter">Assistir ao vídeo</a>
     </article>
     <article class="materia">
       <a class="capa-materia foto" href="https://www.agenzianova.com/a/69120773a767a3.70907265/6711680/2025-11-10/cop30-lula-apre-la-conferenza-e-chiede-piu-impegno-globale-contro-la-crisi-climatica" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-cop30.jpg" alt="Lula discursa na abertura da COP30" loading="lazy"></a>
