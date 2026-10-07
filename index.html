@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pietra Alcântara | Jornalista</title>
+<meta name="description" content="Pietra Alcântara, jornalista de moda, saúde e comportamento, com 10 anos de experiência em conteúdo editorial, digital e vídeo.">
+<meta property="og:title" content="Pietra Alcântara | Jornalista">
+<meta property="og:description" content="Moda, saúde e comportamento. Conteúdo editorial, digital e vídeo.">
+<meta property="og:image" content="fotos/retrato.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ======================================================
+   CORES E FONTES: mude aqui para alterar o site inteiro
+   ====================================================== */
+:root{
+  --papel:#F4F3F0;
+  --branco:#FFFFFF;
+  --tinta:#161514;
+  --vinho:#8E1B23;
+  --cinza:#5E5B57;
+  --linha:#D9D6D0;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --larg:1200px;
+  --topo:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topo) + 12px)}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--vinho);outline-offset:3px}
+.envelope{max-width:var(--larg);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.75rem)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- menu fixo ---------- */
+.topo{position:sticky;top:0;z-index:50;height:var(--topo);background:rgba(244,243,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.topo .envelope{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.marca{font-family:var(--serif);font-size:1.2rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.menu{display:flex;align-items:center;gap:clamp(.9rem,2vw,1.8rem)}
+.menu a{text-decoration:none;font-size:.95rem;color:var(--cinza)}
+.menu a:hover{color:var(--tinta)}
+.acoes{display:flex;align-items:center;gap:.6rem}
+.btn-cv{display:inline-flex;align-items:center;gap:.4rem;background:var(--vinho);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:.55rem 1rem;border-radius:999px;white-space:nowrap}
+.btn-cv:hover{background:#6f141b}
+.btn-cv svg{width:15px;height:15px}
+.btn-menu{display:none;background:none;border:1px solid var(--tinta);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.9rem;cursor:pointer;color:var(--tinta)}
+@media (max-width:860px){
+  .btn-menu{display:inline-block}
+  .menu{display:none;position:absolute;top:var(--topo);left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--papel);border-bottom:1px solid var(--linha);padding:.5rem clamp(1.25rem,4vw,2.75rem) 1rem}
+  .menu.aberto{display:flex}
+  .menu a{padding:.7rem 0;width:100%;border-bottom:1px solid var(--linha);font-size:1.05rem;color:var(--tinta)}
+}
+
+/* ---------- capa ---------- */
+.capa{padding-block:clamp(2rem,5vw,4rem) clamp(3rem,7vw,5.5rem)}
+.capa-grade{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:end}
+.capa h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,10.5vw,8.6rem);line-height:.9;letter-spacing:-.03em}
+.capa h1 span{display:block}
+.capa h1 span:last-child{font-style:italic;font-weight:400;padding-left:.5em}
+.posicionamento{margin-top:clamp(1.5rem,3vw,2.2rem);font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.5;max-width:36ch}
+.posicionamento strong{display:block;font-family:var(--serif);font-size:1.5em;font-weight:500;margin-bottom:.15rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.98rem;padding:.8rem 1.4rem;border-radius:999px;border:1.5px solid var(--tinta)}
+.btn-cheio{background:var(--tinta);color:var(--papel)}
+.btn-cheio:hover{background:var(--vinho);border-color:var(--vinho)}
+.btn-vazio:hover{background:var(--tinta);color:var(--papel)}
+.retrato img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.credito{font-size:.78rem;color:var(--cinza);margin-top:.45rem}
+@media (max-width:820px){.capa-grade{grid-template-columns:1fr}.retrato{order:-1;max-width:420px}.retrato img{aspect-ratio:4/5}}
+
+/* ---------- seções ---------- */
+.secao{padding-block:clamp(3.5rem,8vw,6.5rem);border-top:1px solid var(--tinta)}
+#cases{border-top:0;padding-top:0}
+#cases>.envelope{border-top:1px solid var(--tinta);padding-top:clamp(3.5rem,8vw,6.5rem)}
+.titulo{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1;letter-spacing:-.02em;margin-bottom:clamp(1.8rem,4vw,3rem)}
+
+/* sobre */
+.sobre-grade{display:grid;grid-template-columns:1fr 2fr;gap:clamp(1.5rem,5vw,4.5rem)}
+.sobre p{font-family:var(--serif);font-size:clamp(1.12rem,1.7vw,1.32rem);line-height:1.7;max-width:60ch;margin-bottom:1.1em}
+.sobre strong{font-weight:600}
+@media (max-width:820px){.sobre-grade{grid-template-columns:1fr}}
+
+/* ---------- cases ---------- */
+.indice{display:flex;flex-wrap:wrap;gap:.6rem;margin:-1rem 0 1rem}
+.indice a{text-decoration:none;font-size:.92rem;border:1px solid var(--tinta);border-radius:999px;padding:.4rem .95rem}
+.indice a:hover{background:var(--tinta);color:var(--papel)}
+.bloco{padding-top:clamp(3rem,6vw,4.5rem)}
+.bloco-cabeca{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end;padding-bottom:clamp(1.5rem,3vw,2.5rem);border-bottom:1px solid var(--linha)}
+.bloco-cabeca h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(2rem,4.5vw,3.3rem);line-height:1.05}
+.bloco-cabeca p{color:var(--cinza);max-width:46ch;margin-top:.8rem}
+.vinheta video{width:100%;max-height:520px;aspect-ratio:9/16;object-fit:cover;margin-left:auto;max-width:300px}
+.vinheta figcaption{text-align:right}
+@media (max-width:820px){.bloco-cabeca{grid-template-columns:1fr}.vinheta video{margin:0;max-width:240px}.vinheta figcaption{text-align:left}}
+
+.case{display:grid;grid-template-columns:5fr 7fr;gap:clamp(1.5rem,4.5vw,4rem);padding:clamp(2.5rem,5vw,3.5rem) 0;border-bottom:1px solid var(--linha)}
+.case.sem-imagem{grid-template-columns:1fr}
+.case.sem-imagem .case-corpo{max-width:760px}
+.case-midia img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.case-midia.paisagem img{aspect-ratio:3/2}
+.case-midia.quadrada img{aspect-ratio:1/1}
+.case-cabeca h4{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.05;letter-spacing:-.01em}
+.cargo{margin-top:.5rem;color:var(--cinza);font-size:.98rem}
+.cargo b{color:var(--tinta);font-weight:600}
+.resumo{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.45;margin:1.1rem 0 1.3rem;max-width:46ch}
+.destaques{list-style:none;border-top:1px solid var(--linha)}
+.destaques li{padding:.65rem 0 .65rem 1.4rem;border-bottom:1px solid var(--linha);position:relative;font-weight:500}
+.destaques li::before{content:"";position:absolute;left:0;top:1.15rem;width:.55rem;height:.55rem;background:var(--vinho);border-radius:50%}
+details.mais{margin-top:1.4rem}
+details.mais summary{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;font-weight:600;list-style:none;border-bottom:2px solid var(--vinho);padding-bottom:.1rem}
+details.mais summary::-webkit-details-marker{display:none}
+details.mais summary::after{content:"+";font-size:1.2rem;line-height:1}
+details.mais[open] summary::after{content:"–"}
+.texto{margin-top:1.4rem;max-width:64ch}
+.texto p{margin-bottom:1em}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;margin:1.6rem 0}
+.galeria img{width:100%;aspect-ratio:4/5;object-fit:cover}
+figcaption{font-size:.8rem;color:var(--cinza);margin-top:.4rem;line-height:1.4}
+.links{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.2rem}
+.links a{font-weight:600;font-size:.95rem;text-decoration:underline;text-decoration-color:var(--vinho);text-decoration-thickness:2px;text-underline-offset:5px}
+.reels{display:flex;flex-wrap:wrap;gap:1rem;margin:1.4rem 0}
+.reels blockquote.instagram-media{min-width:260px!important;max-width:320px!important;width:100%!important;margin:0!important}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.4rem 0}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#000;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.yt:hover img{opacity:.85}
+.yt::after{content:"";position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:rgba(142,27,35,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/26px no-repeat}
+.yt.tocando{cursor:default}.yt.tocando::after{display:none}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:820px){.case{grid-template-columns:1fr}.case-midia{max-width:480px}}
+
+
+/* ---------- matérias ---------- */
+.materias-intro{color:var(--cinza);max-width:56ch;margin:-1.2rem 0 2.5rem}
+.materias{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(1.8rem,3.5vw,2.8rem) clamp(1.5rem,3vw,2.2rem)}
+.materia{display:flex;flex-direction:column;border-top:1px solid var(--tinta);padding-top:1rem}
+.materia a.capa-materia{display:block;overflow:hidden;background:var(--branco);border:1px solid var(--linha)}
+.materia a.capa-materia img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top center;transition:transform .3s}
+.materia a.capa-materia:hover img{transform:scale(1.02)}
+.materia .foto img{object-position:center}
+.materia .meta{font-size:.85rem;color:var(--cinza);margin:1rem 0 .4rem}
+.materia .meta b{color:var(--vinho);font-weight:600}
+.materia h3{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.2}
+.materia h3 a{text-decoration:none}
+.materia h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.materia p{color:var(--cinza);font-size:.95rem;margin:.6rem 0 1rem;flex:1}
+.materia .ler{font-weight:600;font-size:.92rem;text-decoration:underline;text-decoration-color:var(--vinho);text-decoration-thickness:2px;text-underline-offset:5px;align-self:flex-start}
+
+/* ---------- trajetória ---------- */
+.linha-tempo{list-style:none;border-top:1px solid var(--tinta)}
+.linha-tempo li{display:grid;grid-template-columns:minmax(7.5rem,11rem) 1fr auto;gap:clamp(.8rem,3vw,2.5rem);align-items:baseline;padding:1.15rem 0;border-bottom:1px solid var(--linha)}
+.ano{font-family:var(--serif);font-size:1.25rem;font-variant-numeric:lining-nums}
+.linha-tempo h3{font-size:1.05rem;font-weight:600;line-height:1.35}
+.linha-tempo p{color:var(--cinza);font-size:.95rem}
+.linha-tempo a{font-size:.9rem;font-weight:600;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--vinho)}
+@media (max-width:640px){.linha-tempo li{grid-template-columns:1fr;gap:.2rem}}
+
+/* ---------- formação ---------- */
+.formacao-grade{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem)}
+.ficha h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.6rem;padding-bottom:.5rem;border-bottom:1px solid var(--tinta);margin:0 0 .4rem}
+.ficha h3:not(:first-child){margin-top:2.2rem}
+.ficha dl div{padding:.7rem 0;border-bottom:1px solid var(--linha)}
+.ficha dt{font-weight:600}
+.ficha dd{color:var(--cinza);font-size:.95rem}
+.ficha ul{list-style:none}
+.ficha ul li{padding:.55rem 0;border-bottom:1px solid var(--linha);font-size:.95rem}
+.ficha ul li span{color:var(--cinza)}
+.ficha figure{margin-top:2rem;max-width:420px}
+.ficha figure img{aspect-ratio:1/1;object-fit:cover;width:100%}
+@media (max-width:820px){.formacao-grade{grid-template-columns:1fr}}
+
+/* ---------- contato ---------- */
+.contato{background:var(--tinta);color:var(--papel);padding-block:clamp(4rem,9vw,7rem)}
+.contato-grade{display:grid;grid-template-columns:1.4fr .6fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.contato h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.8rem,8vw,6.5rem);line-height:.95;letter-spacing:-.03em;margin-bottom:2rem}
+.contato .email{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3.2vw,2.3rem);text-underline-offset:8px;text-decoration-thickness:1px;word-break:break-word}
+.contato ul{list-style:none;display:flex;flex-wrap:wrap;gap:1rem 2.2rem;margin-top:2.2rem}
+.contato ul a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:2px}
+.contato :focus-visible{outline-color:var(--papel)}
+.contato figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.contato figcaption{color:#a9a49c}
+@media (max-width:820px){.contato-grade{grid-template-columns:1fr}.contato figure{max-width:260px}}
+footer{background:var(--tinta);color:#a9a49c;font-size:.85rem;padding-bottom:2.2rem}
+footer .envelope{border-top:1px solid #3a3836;padding-top:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="envelope">
+    <a class="marca" href="#inicio">Pietra Alcântara</a>
+    <nav class="menu" id="menu" aria-label="Seções do site">
+      <a href="#sobre">Sobre</a>
+      <a href="#cases">Cases</a>
+      <a href="#materias">Matérias</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="acoes">
+      <a class="btn-cv" href="CV_Pietra_Alcantara.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5z"/></svg>
+        Baixar CV
+      </a>
+      <button class="btn-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ==================== CAPA ==================== -->
+<section class="capa envelope" aria-label="Apresentação">
+  <div class="capa-grade">
+    <div>
+      <h1><span>Pietra</span><span>Alcântara</span></h1>
+      <p class="posicionamento"><strong>Jornalista</strong>Moda, saúde e comportamento. Conteúdo editorial, digital e vídeo.</p>
+      <div class="ctas">
+        <a class="btn btn-cheio" href="#cases">Ver cases</a>
+        <a class="btn btn-vazio" href="#contato">Entrar em contato</a>
+      </div>
+    </div>
+    <figure class="retrato">
+      <img src="fotos/retrato.jpg" alt="Retrato de Pietra Alcântara com colete vermelho sobre fundo vermelho" fetchpriority="high">
+      <figcaption class="credito">Foto: Bruno Amaral</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ==================== SOBRE ==================== -->
+<section class="secao envelope sobre" id="sobre" aria-labelledby="t-sobre">
+  <div class="sobre-grade">
+    <h2 class="titulo" id="t-sobre">Sobre</h2>
+    <div>
+      <p>Jornalista e profissional de comunicação com atuação em moda, saúde e comportamento, com 10 anos de experiência e vivência internacional em diferentes países, como estudante e como jornalista. Graduada em Jornalismo pela FIAM-FAAM, com pós-graduação em Styling e Direção de Arte pelo Senac SP e especialização em Jornalismo Econômico pela Cásper Líbero.</p>
+      <p>Com foco em conteúdo digital, trabalho com: reportagem; redes sociais; planejamento editorial; roteiro e apresentação de vídeo; assessoria de imprensa; marketing de influência; e-commerce; e análise de métricas. Falo inglês fluente e italiano intermediário, com uso profissional. Cofundadora do <strong>Observatório das Mulheres Periféricas (OMPerifa)</strong> e premiada com o 2º lugar no <strong>Prêmio Sebrae de Jornalismo</strong>, etapa São Paulo, na categoria Vídeo, com a série <strong>CRIAS</strong>, da Agência Mural.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CASES ==================== -->
+<section class="secao" id="cases" aria-labelledby="t-cases">
+<div class="envelope">
+  <h2 class="titulo" id="t-cases">Cases</h2>
+  <nav class="indice" aria-label="Blocos de cases">
+    <a href="#bloco-moda">Moda e redes</a>
+    <a href="#bloco-jornalismo">Jornalismo</a>
+    <a href="#bloco-autoral">Projeto autoral</a>
+  </nav>
+
+  <!-- ===== BLOCO 1: MODA E REDES ===== -->
+  <div class="bloco" id="bloco-moda">
+    <div class="bloco-cabeca">
+      <div>
+        <h3>Moda e redes</h3>
+        <p>Do livro sobre brechós de São Paulo às estratégias digitais para marcas de moda, beleza, gastronomia e instituições.</p>
+      </div>
+      <figure class="vinheta">
+        <video src="video/desfile.mp4" poster="video/desfile-poster.jpg" autoplay muted loop playsinline aria-label="Trecho do desfile da Misci na SPFW"></video>
+        <figcaption>Desfile da Misci na SPFW, temporada de verão 2021, registrado da primeira fila.</figcaption>
+      </figure>
+    </div>
+
+    <!-- GARIMPO URBANO -->
+    <article class="case" id="case-garimpo">
+      <figure class="case-midia">
+        <img src="fotos/garimpo-brecho.jpg" alt="Livro Garimpo Urbano segurado em frente às araras de um brechó" loading="lazy">
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Garimpo Urbano</h4>
+          <p class="cargo"><b>Autora</b>, livro-reportagem independente, 2018–2019</p>
+        </div>
+        <p class="resumo">Livro-reportagem que cataloga 60 brechós de São Paulo e abriu minha entrada no mercado de moda.</p>
+        <ul class="destaques">
+          <li>60 brechós apurados um a um, em todas as regiões da cidade</li>
+          <li>Selecionado no Speed Mentoring, programa de aceleração do Sebrae</li>
+          <li>Livro vendido e usado como porta de entrada no mercado de moda</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Eu ouvia de muita gente que queria comprar em brechó, mas não conhecia nenhum. Só que São Paulo está cheia deles. Foi daí que nasceu o Garimpo Urbano, um livro-reportagem que cataloga 60 brechós da cidade.</p>
+            <p>Visitei brechós de todas as regiões de São Paulo e confirmei as informações de cada um diretamente com os responsáveis, numa apuração feita endereço por endereço. O projeto começou como meu trabalho de conclusão em jornalismo, apresentado em 2018. Depois, inscrevi o livro no Speed Mentoring, programa de aceleração do Sebrae, e ele foi selecionado. Com isso, foi publicado de forma independente em 2019. Fiz a pauta, a apuração e o texto, e contratei um especialista para a diagramação e o design.</p>
+            <p>O livro foi vendido e virou meu cartão de visitas no mercado de moda. Foi com ele que entrei na área como social media, em 2020, a partir de um lançamento digital feito para captar clientes.</p>
+          </div>
+          <div class="galeria">
+            <figure><img src="fotos/garimpo-livro.jpg" alt="Livro Garimpo Urbano no colo, com óculos e blazer xadrez" loading="lazy"><figcaption>O livro, publicado em 2019.</figcaption></figure>
+            <figure><img src="fotos/lancamento-digital.jpg" alt="Pietra lendo diante de um ring light, com o livro na estante ao fundo" loading="lazy"><figcaption>Gravação do lançamento digital que me levou à Cia de Moda.</figcaption></figure>
+          </div>
+          <div class="links">
+            <a href="https://s3.amazonaws.com/external_clips/3480749/pre_livro_garimpo.pdf?1593737448" target="_blank" rel="noopener">Ler a prévia do livro (PDF)</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- CIA DE MODA -->
+    <article class="case" id="case-cia">
+      <figure class="case-midia">
+        <img src="fotos/cia-ensaio.jpg" alt="Bastidores de um ensaio fotográfico da Cia de Moda em uma fábrica" loading="lazy">
+        <figcaption>Bastidores de um ensaio da Cia de Moda, onde captei vídeos para reels e conteúdos de bastidor.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Cia de Moda</h4>
+          <p class="cargo"><b>Estrategista de Redes Sociais</b>, 2020–2024</p>
+        </div>
+        <p class="resumo">Quatro anos na estratégia digital da marca, primeiro como prestadora de serviços e depois no time de marketing.</p>
+        <ul class="destaques">
+          <li>Faturamento do e-commerce dobrado na Black Friday de 2022, em relação ao mês anterior</li>
+          <li>Lives shop implementadas como formato fixo de vendas</li>
+          <li>Coordenação de uma assistente de social media</li>
+        </ul>
+        <details class="mais" data-instagram>
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Depois do Garimpo Urbano, fiz um lançamento digital com um objetivo claro: captar clientes no mercado de moda. Foi assim que cheguei à Cia de Moda. Por dois anos, fui prestadora de serviços digitais da marca. Depois, fui convidada a integrar o time de marketing, onde fiquei por mais dois anos.</p>
+            <p>Cuidei da estratégia digital da marca no Instagram e no Facebook, do planejamento ao acompanhamento de resultados. Estruturei o calendário editorial e produzi posts, vídeos curtos, artes e roteiros para conteúdos audiovisuais e lives. Também fui a campo nos ensaios da marca, gravando reels e bastidores. Atuei com Meta Ads e e-mail marketing pelo RD Station, e coordenei uma assistente de social media.</p>
+            <p>Meu trabalho de maior impacto foi a reestruturação da estratégia digital para a Black Friday de 2022. Com ajustes em conteúdo e comunicação, o faturamento do e-commerce na Black Friday dobrou em relação ao mês anterior. Também implementei as lives shop como formato recorrente de vendas e engajamento.</p>
+          </div>
+          <div class="galeria">
+            <figure><img src="fotos/cia-live.jpg" alt="Print de uma live shop da Cia de Moda no Instagram" loading="lazy"><figcaption>Live shop de novidades de tricô e jeans.</figcaption></figure>
+            <figure><img src="fotos/cia-campanha.jpg" alt="Arte da campanha Bota-Fora de Verão sendo criada no computador" loading="lazy"><figcaption>Criação da campanha Bota-Fora de Verão.</figcaption></figure>
+          </div>
+          <div class="reels">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C6ZsbNlPGGj/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C6ZsbNlPGGj/">Ver reel no Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C6RUT6kLa6z/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C6RUT6kLa6z/">Ver reel no Instagram</a></blockquote>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- GRUPO CONTATTO E GIÊ BEAUTY -->
+    <article class="case" id="case-contatto">
+      <figure class="case-midia quadrada">
+        <img src="fotos/gie-linha.jpg" alt="Linha de produtos para cabelos cacheados da Giê Beauty" loading="lazy">
+        <figcaption>Linha de cuidados para cabelos cacheados da Giê Beauty, cujo lançamento acompanhei com a estratégia de marketing de influência e o envio de press kits. Imagem: divulgação da marca.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Grupo Contatto e Giê Beauty</h4>
+          <p class="cargo"><b>Assistente de Comunicação e PR</b>, 2016–2017, e <b>freelancer</b> em redes sociais, incluindo 2022</p>
+        </div>
+        <p class="resumo">Assessoria de imprensa e redes sociais para clientes da agência, e retorno como freelancer no lançamento da Giê Beauty.</p>
+        <ul class="destaques">
+          <li>Participação na conquista da Search Optics, maior cliente da agência no período</li>
+          <li>Marketing de influência e press kits no lançamento da Giê Beauty</li>
+          <li>Chamada de volta para diferentes projetos depois da saída</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Comecei no Grupo Contatto em 2016, como assistente de comunicação e PR. Cuidei da assessoria de imprensa e das redes sociais de clientes como JAC Motors, Garmin e Search Optics, apoiando o planejamento e a execução das estratégias de comunicação e produzindo conteúdos institucionais e digitais.</p>
+            <p>Também participei das apresentações comerciais em inglês para captar a Search Optics, cliente internacional que a agência conquistou e que se tornou a maior da casa no período, fortalecendo a atuação internacional da agência.</p>
+            <p>Mesmo depois de sair, fui chamada várias vezes para voltar como reforço do time de redes sociais. Uma dessas vezes foi em 2022, no lançamento da Giê Beauty. Como freelancer, acompanhei a estratégia de marketing de influência da marca, incluindo o envio de press kits para influenciadoras.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- QUINCHO -->
+    <article class="case" id="case-quincho">
+      <figure class="case-midia paisagem">
+        <img src="fotos/quincho-ebook.jpg" alt="Arte da campanha do e-book Vegetais para Todos, com a chef Mari Sciotti" loading="lazy">
+        <figcaption>Arte da campanha do e-book "Vegetais para Todos", montada por mim.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Quincho e Chef Mari Sciotti</h4>
+          <p class="cargo"><b>Estrategista de Redes Sociais</b>, 2024</p>
+        </div>
+        <p class="resumo">Dez meses nas redes do restaurante e da chef, com foco em performance e venda de infoprodutos.</p>
+        <ul class="destaques">
+          <li>Aumento de 83,9% nas interações e visitas ao perfil</li>
+          <li>Primeira campanha de vendas do e-book "Vegetais para Todos", com metas atingidas</li>
+        </ul>
+        <details class="mais" data-instagram>
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Durante dez meses, cuidei das redes sociais do Quincho e do perfil da chef Mari Sciotti. No perfil da chef, o foco era performance e monetização de infoprodutos, com planejamento e atualização constante dos conteúdos.</p>
+            <p>Nesse período, as interações e visitas ao perfil cresceram 83,9%. Também criei a primeira campanha de vendas do e-book "Vegetais para Todos", que atingiu as metas definidas.</p>
+          </div>
+          <div class="galeria">
+            <figure><img src="fotos/quincho-torta.jpg" alt="Fatia de torta de chocolate com xícara do Quincho" loading="lazy"><figcaption>Foto feita por mim, no celular, para as redes.</figcaption></figure>
+            <figure><img src="fotos/quincho-salao.jpg" alt="Salão do Quincho com claraboia e mesas de madeira" loading="lazy"><figcaption>O salão do Quincho. Foto: Duda.</figcaption></figure>
+          </div>
+          <div class="reels">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1aNnzrPx0d/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C1aNnzrPx0d/">Ver reel no Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C7WwQn7uGCZ/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C7WwQn7uGCZ/">Ver reel no Instagram</a></blockquote>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- GRABOIS -->
+    <article class="case" id="case-grabois">
+      <figure class="case-midia">
+        <button class="yt" data-id="4-cH9Wf85jc" aria-label="Assistir ao episódio Discord: banir resolve?, do Tá na Rede">
+          <img src="fotos/tanarede-discord.jpg" alt="" loading="lazy">
+        </button>
+        <figcaption>Tá na Rede, programa semanal que apresento.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Fundação Maurício Grabois</h4>
+          <p class="cargo"><b>Editora de Conteúdo</b>, desde 2024</p>
+        </div>
+        <p class="resumo">Redes sociais da fundação e apresentação do programa semanal Tá na Rede.</p>
+        <ul class="destaques">
+          <li>Apresentadora do programa semanal Tá na Rede</li>
+          <li>Post de grande repercussão já na primeira semana</li>
+          <li>Crescimento consistente de alcance e engajamento</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Desde agosto de 2024, sou editora de conteúdo da Fundação Maurício Grabois e cuido das redes sociais da instituição. Planejo o calendário editorial, defino pautas, formatos e prioridades, e adapto artigos, análises políticas e conteúdos de memória institucional para o Instagram e o Facebook.</p>
+            <p>Produzo posts, carrosséis e vídeos curtos em parceria com as equipes editorial, de design e de vídeo, elaboro os briefings e acompanho a execução. Também cubro eventos, lançamentos de livros e palestras da fundação, e monitoro alcance, engajamento e crescimento para ajustar a estratégia.</p>
+            <p>No programa semanal Tá na Rede, comecei na produção executiva, cuidando da logística e do agendamento de estúdio. Hoje sou a apresentadora.</p>
+            <p>Logo na primeira semana, um post sobre a diplomação póstuma de estudantes da USP mortos pela ditadura teve grande repercussão. Desde então, as redes da fundação ganharam alcance e engajamento de forma consistente, com um calendário editorial alinhado à estratégia digital e uma identidade editorial mais forte.</p>
+          </div>
+          <div class="videos">
+            <figure><button class="yt" data-id="gpJ4fz209BQ" aria-label="Assistir ao episódio O design do vício exposto"><img src="fotos/tanarede-vicio.jpg" alt="" loading="lazy"></button><figcaption>O design do vício exposto</figcaption></figure>
+            <figure><button class="yt" data-id="3Bv3iqtXn54" aria-label="Assistir ao episódio A conta das bets chegou"><img src="fotos/tanarede-bets.jpg" alt="" loading="lazy"></button><figcaption>A conta das bets chegou</figcaption></figure>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== BLOCO 2: JORNALISMO ===== -->
+  <div class="bloco" id="bloco-jornalismo">
+    <div class="bloco-cabeca">
+      <div>
+        <h3>Jornalismo</h3>
+        <p>Apuração, texto e vídeo em redações como Estadão, Agenzia Nova e Agência Mural.</p>
+      </div>
+    </div>
+
+    <!-- ESTADÃO -->
+    <article class="case" id="case-estadao">
+      <figure class="case-midia paisagem">
+        <img src="fotos/estadao-ministro.jpg" alt="Pietra, o ministro dos Transportes George Santoro e Giovanna Riato no estúdio" loading="lazy">
+        <figcaption>Com o ministro dos Transportes, George Santoro, e a editora-chefe Giovanna Riato.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Estadão</h4>
+          <p class="cargo"><b>Repórter temporária</b>, Jornal do Carro e Estradão, 2026</p>
+        </div>
+        <p class="resumo">Reportagem multiplataforma sobre transporte, logística e mobilidade.</p>
+        <ul class="destaques">
+          <li>Entrevista exclusiva com o ministro dos Transportes, ao lado da editora-chefe Giovanna Riato</li>
+          <li>Uma mesma entrevista publicada em texto, YouTube e vídeo vertical</li>
+          <li>Review em vídeo da Mercedes-Benz Sprinter</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>No Estadão, fui repórter temporária do Jornal do Carro, na subeditoria Estradão, de abril a junho de 2026, e voltei em outubro para mais um período, até dezembro. Cubro transporte rodoviário, logística e mobilidade.</p>
+            <p>Apuro temas que ligam o setor à economia e às políticas públicas, como custos do frete, impacto do diesel, mercado de veículos pesados e regulação do transporte. Entrevisto fontes do mercado, especialistas e representantes de empresas, e acompanho tendências e mudanças regulatórias.</p>
+            <p>Ao lado de Giovanna Riato, editora-chefe do Jornal do Carro, conduzi uma entrevista exclusiva com o ministro dos Transportes, George Santoro. A conversa virou matéria no site, vídeo no YouTube e cortes verticais para as redes. Também gravei o review da Mercedes-Benz Sprinter para o canal do Jornal do Carro no YouTube, e produzo vídeos verticais e web stories.</p>
+          </div>
+          <div class="videos">
+            <figure><button class="yt" data-id="wT6R_NRO86A" aria-label="Assistir ao review da Mercedes-Benz Sprinter"><img src="fotos/estadao-review.jpg" alt="" loading="lazy"></button><figcaption>Review da Mercedes-Benz Sprinter.</figcaption></figure>
+            <figure><img src="fotos/estadao-vertical.jpg" alt="Corte vertical da entrevista com a marca do Jornal do Carro" loading="lazy" style="aspect-ratio:9/16;object-fit:cover;max-width:200px"><figcaption>Corte vertical da entrevista para as redes.</figcaption></figure>
+          </div>
+          <div class="links">
+            <a href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener">Ler a entrevista com o ministro</a>
+            <a href="https://www.estadao.com.br/jornal-do-carro/free-flow-abre-disputa-por-dados-de-motoristas-nas-rodovias/" target="_blank" rel="noopener">Ler a reportagem sobre free flow</a>
+            <a href="https://www.estadao.com.br/web-stories/jornal-do-carro/jornal-do-carro-ganha-nova-cara-confira-5-novidades/" target="_blank" rel="noopener">Ver web story</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AGENZIA NOVA -->
+    <article class="case sem-imagem" id="case-nova">
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Agenzia Nova</h4>
+          <p class="cargo"><b>Correspondente internacional no Brasil</b>, 2025–2026</p>
+        </div>
+        <p class="resumo">Oito meses escrevendo diariamente em italiano sobre o Brasil para a agência de notícias italiana.</p>
+        <ul class="destaques">
+          <li>Produção diária em italiano sobre política, economia e relações internacionais</li>
+          <li>Cobertura da visita de Ignazio La Russa, presidente do Senado italiano, e do Fórum Brasil-África</li>
+          <li>Reunião com correspondentes estrangeiros na CNI após o anúncio do tarifaço de Trump</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Fui correspondente no Brasil da Agenzia Nova, agência de notícias italiana, de julho de 2025 a fevereiro de 2026. Produzia diariamente, em italiano, conteúdo sobre política, economia e relações internacionais brasileiras, apurando, checando e contextualizando os fatos para leitores estrangeiros. Também acompanhava o noticiário em inglês e espanhol para dar contexto internacional às pautas.</p>
+            <p>Fiz cobertura presencial de eventos políticos, diplomáticos e institucionais, em contato direto com fontes oficiais e especialistas. Cobri a visita ao Brasil do presidente do Senado italiano, Ignazio La Russa, o Fórum Brasil-África e um evento com o chanceler Mauro Vieira. Também participei, na sede da CNI, da reunião com correspondentes estrangeiros após o anúncio do tarifaço de Trump.</p>
+          </div>
+          <div class="links">
+            <a href="https://www.agenzianova.com/a/69120773a767a3.70907265/6711680/2025-11-10/cop30-lula-apre-la-conferenza-e-chiede-piu-impegno-globale-contro-la-crisi-climatica" target="_blank" rel="noopener">COP30: abertura da conferência</a>
+            <a href="https://www.agenzianova.com/a/68c868811e2715.86846600/6516767/2025-09-15/brasile-usa-lula-sul-nyt-nostra-giustizia-non-opera-caccia-alle-streghe/linked" target="_blank" rel="noopener">Lula no New York Times</a>
+            <a href="https://www.agenzianova.com/a/68ae16d1605d20.46137248/6466165/2025-08-26/brasile-ministro-esteri-accusa-di-trump-su-discriminazione-commerciale-non-ha-fondamento" target="_blank" rel="noopener">Chanceler responde a Trump</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- AGÊNCIA MURAL -->
+    <article class="case" id="case-mural">
+      <figure class="case-midia">
+        <img src="fotos/premio-sebrae.jpg" alt="Troféu do Prêmio Sebrae de Jornalismo, categoria Vídeo, com o nome de Pietra Alcântara" loading="lazy">
+        <figcaption>Troféu do Prêmio Sebrae de Jornalismo, 10ª edição.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Agência Mural</h4>
+          <p class="cargo"><b>Repórter</b>, 2019–2023, e <b>Estrategista de Redes Sociais</b>, 2021–2022</p>
+        </div>
+        <p class="resumo">Reportagem e redes sociais numa agência que cobre as periferias da Grande São Paulo.</p>
+        <ul class="destaques">
+          <li>2º lugar no Prêmio Sebrae de Jornalismo, etapa São Paulo, categoria Vídeo, com a série CRIAS</li>
+          <li>Visualizações do Rolê na Quebrada mais que dobradas</li>
+          <li>Matéria mais lida de julho de 2023</li>
+        </ul>
+        <details class="mais" data-instagram>
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Na Agência Mural, que faz jornalismo sobre e a partir das periferias da Grande São Paulo, assinei reportagens entre 2019 e 2023. De março de 2021 a agosto de 2022, também cuidei das redes sociais institucionais: Instagram, Facebook, X, TikTok e WhatsApp.</p>
+            <p>Meu trabalho era levar as reportagens para a linguagem de cada plataforma, respeitando o público de cada canal. Fiz o planejamento editorial de médio e longo prazo e produzi legendas, roteiros e conteúdos visuais para reportagens, projetos especiais e séries em vídeo. Também me articulei com coletivos e artistas periféricos e colaborei com podcasts e outros formatos audiovisuais.</p>
+            <p>Participei da reformulação estratégica do Rolê na Quebrada, com foco na distribuição pelas redes, e as visualizações do projeto mais que dobraram. Também ajudei a consolidar a parceria editorial com o Catraca Livre.</p>
+            <p>Com a série de vídeo-reportagem CRIAS, da Agência Mural, apoiada pelo ICFJ e pela Meta, conquistei o 2º lugar na 10ª edição do Prêmio Sebrae de Jornalismo, etapa São Paulo, na categoria Vídeo, com o episódio "Miltão Pipas: do Grajaú às passarelas da moda". Como repórter, assinei matérias sobre cultura e cidade, uma coluna semanal de cultura e a reportagem sobre microapartamentos, a mais lida da agência em julho de 2023.</p>
+          </div>
+          <div class="videos">
+            <figure><button class="yt" data-id="_B2vAuIyzU8" data-thumb="remote" aria-label="Assistir à série CRIAS"><img src="https://i.ytimg.com/vi/_B2vAuIyzU8/hqdefault.jpg" alt="" loading="lazy"></button><figcaption>Série CRIAS, da Agência Mural.</figcaption></figure>
+          </div>
+          <div class="reels">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CkbtiFqOWCC/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/CkbtiFqOWCC/">Do Grajaú ao SPFW, no Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/ClRtc88M2Ho/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/ClRtc88M2Ho/">Arquiteta da favela, no Instagram</a></blockquote>
+          </div>
+          <div class="links">
+            <a href="https://www.agenciamural.org.br/microapartamentos-mulheres-periferias-sp/" target="_blank" rel="noopener">Ler a reportagem sobre microapartamentos</a>
+            <a href="https://www.agenciamural.org.br/fechamento-das-oficinas-culturais-em-sp/" target="_blank" rel="noopener">Ler sobre o fim das Oficinas Culturais</a>
+            <a href="https://mural.blogfolha.uol.com.br/2019/10/23/ex-treinadora-de-boxe-carla-arias-ensina-nova-geracao-na-zona-norte-de-sp/" target="_blank" rel="noopener">Ler o perfil de Carla Arias</a>
+            <a href="https://www.agenciamural.org.br/muralista/pietraalcantara/" target="_blank" rel="noopener">Todas as minhas matérias na Mural</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <!-- PÉ NA ESTRADA -->
+    <article class="case sem-imagem" id="case-penaestrada">
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>Pé na Estrada</h4>
+          <p class="cargo"><b>Repórter</b>, SBT e Trucão Comunicações, 2017–2021</p>
+        </div>
+        <p class="resumo">Meu primeiro emprego no jornalismo, com reportagem digital diária, TV e rádio.</p>
+        <ul class="destaques">
+          <li>Matérias frequentemente entre as mais acessadas do mês</li>
+          <li>Participações na TV, na Band e no SBT, e em rádios como Transamérica</li>
+          <li>Gestão do Instagram e definição da linha editorial dos sites</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Meu primeiro emprego no jornalismo foi no Pé na Estrada, programa exibido na Band e depois no SBT. De abril de 2017 a maio de 2021, atualizei diariamente o site com notas e reportagens para o público do transporte e cuidei do perfil do programa no Instagram.</p>
+            <p>Defini as linhas editoriais dos sites Trucão Comunicações e Pé na Estrada e participei da fusão dos portais, com matérias frequentemente entre as mais acessadas do mês. Também fiz participações na TV, na Band e no SBT, e em rádios como Tropical FM, Rádio Capital e Transamérica.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== BLOCO 3: PROJETO AUTORAL ===== -->
+  <div class="bloco" id="bloco-autoral">
+    <div class="bloco-cabeca">
+      <div>
+        <h3>Projeto autoral</h3>
+        <p>Dados e narrativas sobre as mulheres das periferias.</p>
+      </div>
+    </div>
+
+    <article class="case" id="case-omperifa">
+      <figure class="case-midia">
+        <img src="fotos/ventre-livre.jpg" alt="Capa do livro Ventre Livre? Raça, território e o acesso à laqueadura no Brasil" loading="lazy">
+        <figcaption>Capa do livro "Ventre Livre?". Capa: Raíssa Ribeiro.</figcaption>
+      </figure>
+      <div class="case-corpo">
+        <div class="case-cabeca">
+          <h4>OMPerifa</h4>
+          <p class="cargo"><b>Cofundadora e Diretora de Conteúdo</b>, Observatório das Mulheres Periféricas, desde 2025</p>
+        </div>
+        <p class="resumo">Coletivo de jornalismo que produz dados e narrativas sobre mulheres das periferias.</p>
+        <ul class="destaques">
+          <li>Edital conquistado no ano de fundação, com o projeto O Teto e a Tela</li>
+          <li>Colaboração no livro "Ventre Livre?", com ISBN</li>
+        </ul>
+        <details class="mais">
+          <summary>Ler case completo</summary>
+          <div class="texto">
+            <p>Em 2025, cofundei o Observatório das Mulheres Periféricas, coletivo de jornalismo que produz dados e narrativas sobre mulheres das periferias, onde sou diretora de conteúdo. No mesmo ano, conquistamos nosso primeiro edital, com o projeto O Teto e a Tela.</p>
+            <p>No O Teto e a Tela, fizemos trabalho de campo com mães e cuidadoras da Zona Sul de São Paulo e de Diadema sobre tempo de tela e cuidado. Também conduzi a campanha nas redes, com briefings específicos para Instagram e LinkedIn.</p>
+            <p>Colaborei no "Ventre Livre?", investigação sobre os dados de laqueadura no Brasil entre 2015 e 2024, com recorte de raça, território e acesso. O projeto virou livro com ISBN, coordenado por Amanda Stabile, com colaboração minha, de Gabriela Carvalho e de Moara Oliveira.</p>
+          </div>
+          <div class="links">
+            <a href="https://omperifa.org/" target="_blank" rel="noopener">Conhecer o OMPerifa</a>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- ==================== MATÉRIAS ==================== -->
+<section class="secao envelope" id="materias" aria-labelledby="t-mat">
+  <h2 class="titulo" id="t-mat">Matérias</h2>
+  <p class="materias-intro">Uma seleção de textos publicados, de comportamento a jornalismo de dados, em português e em italiano.</p>
+  <div class="materias">
+    <article class="materia">
+      <a class="capa-materia" href="https://agenciamural.org.br/microapartamentos-mulheres-periferias-sp/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img style="object-position:left center" src="fotos/materia-microapartamentos.jpg" alt="Print da reportagem sobre microapartamentos na Agência Mural" loading="lazy"></a>
+      <p class="meta"><b>Comportamento e matéria mais lida do mês</b><br>Agência Mural, julho de 2023</p>
+      <h3><a href="https://agenciamural.org.br/microapartamentos-mulheres-periferias-sp/" target="_blank" rel="noopener">Moradoras das periferias de SP explicam por que não viveriam em microapartamentos</a></h3>
+      <p>Reportagem que ouviu moradoras de bairros periféricos de São Paulo sobre memória, território e o valor afetivo da casa própria. Foi a matéria mais lida da Agência Mural no mês de publicação.</p>
+      <a class="ler" href="https://agenciamural.org.br/microapartamentos-mulheres-periferias-sp/" target="_blank" rel="noopener" aria-label="Ler a matéria: Moradoras das periferias de SP explicam por que não viveriam em microapartamentos">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia" href="https://www.estadao.com.br/jornal-do-carro/pesquisa-revela-qual-e-o-maior-medo-dos-passageiros-de-carros-de-aplicativo-no-brasil/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-passageiras.jpg" alt="Print da notícia sobre o medo dos passageiros de aplicativos no Estadão" loading="lazy"></a>
+      <p class="meta"><b>Notícia</b><br>Estadão, Jornal do Carro</p>
+      <h3><a href="https://www.estadao.com.br/jornal-do-carro/pesquisa-revela-qual-e-o-maior-medo-dos-passageiros-de-carros-de-aplicativo-no-brasil/" target="_blank" rel="noopener">Pesquisa revela qual é o maior medo dos passageiros de apps no Brasil</a></h3>
+      <p>Levantamento da Ipsos para a inDrive aponta que 72% da sensação de vulnerabilidade das passageiras ocorre antes do embarque, com mulheres relatando maior necessidade de monitoramento e conferência dos dados do motorista.</p>
+      <a class="ler" href="https://www.estadao.com.br/jornal-do-carro/pesquisa-revela-qual-e-o-maior-medo-dos-passageiros-de-carros-de-aplicativo-no-brasil/" target="_blank" rel="noopener" aria-label="Ler a matéria: Pesquisa revela qual é o maior medo dos passageiros de apps no Brasil">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia" href="https://www.estadao.com.br/jornal-do-carro/bug-do-waze-apps-podem-criar-novos-congestionamentos-diz-estudo/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-waze.jpg" alt="Print da notícia sobre o Waze no Estadão" loading="lazy"></a>
+      <p class="meta"><b>Notícia</b><br>Estadão, Jornal do Carro</p>
+      <h3><a href="https://www.estadao.com.br/jornal-do-carro/bug-do-waze-apps-podem-criar-novos-congestionamentos-diz-estudo/" target="_blank" rel="noopener">Bug do Waze? Apps podem criar novos congestionamentos, diz estudo</a></h3>
+      <p>Estudo acadêmico mostra que aplicativos de navegação como Waze e Google Maps podem redistribuir o tráfego e transferir congestionamentos para vias residenciais, reacendendo o debate sobre o efeito manada.</p>
+      <a class="ler" href="https://www.estadao.com.br/jornal-do-carro/bug-do-waze-apps-podem-criar-novos-congestionamentos-diz-estudo/" target="_blank" rel="noopener" aria-label="Ler a matéria: Bug do Waze? Apps podem criar novos congestionamentos, diz estudo">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia" href="https://www.estadao.com.br/jornal-do-carro/free-flow-abre-disputa-por-dados-de-motoristas-nas-rodovias/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-freeflow.jpg" alt="Print da reportagem sobre free flow no Estadão" loading="lazy"></a>
+      <p class="meta"><b>Reportagem</b><br>Estadão, Jornal do Carro</p>
+      <h3><a href="https://www.estadao.com.br/jornal-do-carro/free-flow-abre-disputa-por-dados-de-motoristas-nas-rodovias/" target="_blank" rel="noopener">Free flow abre disputa por dados de motoristas nas rodovias</a></h3>
+      <p>A chegada da norte-americana TransCore ao Brasil, em parceria com a Pumatronix, expõe uma nova disputa em torno dos dados gerados pelos pedágios free flow, enquanto a regulação sobre o tema segue indefinida.</p>
+      <a class="ler" href="https://www.estadao.com.br/jornal-do-carro/free-flow-abre-disputa-por-dados-de-motoristas-nas-rodovias/" target="_blank" rel="noopener" aria-label="Ler a matéria: Free flow abre disputa por dados de motoristas nas rodovias">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia" href="https://www.estadao.com.br/jornal-do-carro/estradao/nova-ia-enxerga-caminhoes-e-identifica-ate-eixo-suspenso-entenda/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-ia-caminhoes.jpg" alt="Print da reportagem sobre inteligência artificial em rodovias no Estadão" loading="lazy"></a>
+      <p class="meta"><b>Jornalismo de dados</b><br>Estadão, Jornal do Carro e Estradão</p>
+      <h3><a href="https://www.estadao.com.br/jornal-do-carro/estradao/nova-ia-enxerga-caminhoes-e-identifica-ate-eixo-suspenso-entenda/" target="_blank" rel="noopener">Nova IA “enxerga” caminhões e identifica até eixo suspenso; entenda</a></h3>
+      <p>Sistema combina câmeras, redes neurais e sensor lidar para classificar veículos, contar eixos e detectar caminhões muito próximos ou com eixo suspenso levantado, numa leitura de dados de tráfego em tempo real.</p>
+      <a class="ler" href="https://www.estadao.com.br/jornal-do-carro/estradao/nova-ia-enxerga-caminhoes-e-identifica-ate-eixo-suspenso-entenda/" target="_blank" rel="noopener" aria-label="Ler a matéria: Nova IA “enxerga” caminhões e identifica até eixo suspenso; entenda">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia foto" href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/estadao-ministro.jpg" alt="Pietra, o ministro George Santoro e Giovanna Riato no estúdio" loading="lazy"></a>
+      <p class="meta"><b>Entrevista exclusiva</b><br>Estadão, Jornal do Carro e Estradão</p>
+      <h3><a href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener">Sem a formação de novos caminhoneiros, o Brasil terá um problema em cinco anos, diz ministro</a></h3>
+      <p>Entrevista exclusiva com o ministro dos Transportes, George Santoro, conduzida ao lado da editora-chefe Giovanna Riato e publicada em texto, vídeo e cortes verticais.</p>
+      <a class="ler" href="https://www.estadao.com.br/amp/jornal-do-carro/estradao/sem-a-formacao-de-novos-caminhoneiros-o-brasil-tera-um-problema-em-cinco-anos-diz-ministro/" target="_blank" rel="noopener" aria-label="Ler a matéria: Sem a formação de novos caminhoneiros, o Brasil terá um problema em cinco anos, diz ministro">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia foto" href="https://www.agenzianova.com/a/69120773a767a3.70907265/6711680/2025-11-10/cop30-lula-apre-la-conferenza-e-chiede-piu-impegno-globale-contro-la-crisi-climatica" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-cop30.jpg" alt="Lula discursa na abertura da COP30" loading="lazy"></a>
+      <p class="meta"><b>Cobertura internacional, em italiano</b><br>Agenzia Nova, Itália, novembro de 2025</p>
+      <h3><a href="https://www.agenzianova.com/a/69120773a767a3.70907265/6711680/2025-11-10/cop30-lula-apre-la-conferenza-e-chiede-piu-impegno-globale-contro-la-crisi-climatica" target="_blank" rel="noopener">Cop30: Lula apre la conferenza e chiede più impegno globale contro la crisi climatica</a></h3>
+      <p>Texto em italiano sobre a abertura da COP30, em Belém, com o discurso do presidente Lula sobre financiamento climático, transferência de tecnologia e gastos militares globais.</p>
+      <a class="ler" href="https://www.agenzianova.com/a/69120773a767a3.70907265/6711680/2025-11-10/cop30-lula-apre-la-conferenza-e-chiede-piu-impegno-globale-contro-la-crisi-climatica" target="_blank" rel="noopener" aria-label="Ler a matéria: Cop30: Lula apre la conferenza e chiede più impegno globale contro la crisi climatica">Ler a matéria</a>
+    </article>
+    <article class="materia">
+      <a class="capa-materia" href="https://mural.blogfolha.uol.com.br/2019/10/23/ex-treinadora-de-boxe-carla-arias-ensina-nova-geracao-na-zona-norte-de-sp/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="fotos/materia-carla-arias.jpg" alt="Print do perfil de Carla Arias publicado pela Agência Mural" loading="lazy"></a>
+      <p class="meta"><b>Perfil</b><br>Agência Mural, no blog da Folha, outubro de 2019</p>
+      <h3><a href="https://mural.blogfolha.uol.com.br/2019/10/23/ex-treinadora-de-boxe-carla-arias-ensina-nova-geracao-na-zona-norte-de-sp/" target="_blank" rel="noopener">Ex-treinadora de boxe, Carla Arias ensina nova geração na zona norte de SP</a></h3>
+      <p>Perfil de Carla Arias, que assumiu com o marido a academia de boxe da família e hoje forma uma nova geração de atletas na periferia de São Paulo.</p>
+      <a class="ler" href="https://mural.blogfolha.uol.com.br/2019/10/23/ex-treinadora-de-boxe-carla-arias-ensina-nova-geracao-na-zona-norte-de-sp/" target="_blank" rel="noopener" aria-label="Ler a matéria: Ex-treinadora de boxe, Carla Arias ensina nova geração na zona norte de SP">Ler a matéria</a>
+    </article>
+  </div>
+</section>
+
+<!-- ==================== TRAJETÓRIA ==================== -->
+<section class="secao envelope" id="trajetoria" aria-labelledby="t-traj">
+  <h2 class="titulo" id="t-traj">Trajetória</h2>
+  <ol class="linha-tempo" reversed>
+    <li><span class="ano">2026</span><div><h3>Repórter temporária</h3><p>Estadão, Jornal do Carro e Estradão</p></div><a href="#case-estadao">Ver case</a></li>
+    <li><span class="ano">2025–2026</span><div><h3>Correspondente internacional no Brasil</h3><p>Agenzia Nova</p></div><a href="#case-nova">Ver case</a></li>
+    <li><span class="ano">2025–atual</span><div><h3>Cofundadora e diretora de conteúdo</h3><p>OMPerifa, Observatório das Mulheres Periféricas</p></div><a href="#case-omperifa">Ver case</a></li>
+    <li><span class="ano">2024–atual</span><div><h3>Editora de conteúdo e apresentadora do Tá na Rede</h3><p>Fundação Maurício Grabois</p></div><a href="#case-grabois">Ver case</a></li>
+    <li><span class="ano">2024</span><div><h3>Estrategista de redes sociais</h3><p>Quincho e Chef Mari Sciotti</p></div><a href="#case-quincho">Ver case</a></li>
+    <li><span class="ano">2020–2024</span><div><h3>Estrategista de redes sociais</h3><p>Cia de Moda</p></div><a href="#case-cia">Ver case</a></li>
+    <li><span class="ano">2019–2023</span><div><h3>Repórter e estrategista de redes sociais</h3><p>Agência Mural</p></div><a href="#case-mural">Ver case</a></li>
+    <li><span class="ano">2018–2019</span><div><h3>Autora do livro-reportagem Garimpo Urbano</h3><p>Publicação independente</p></div><a href="#case-garimpo">Ver case</a></li>
+    <li><span class="ano">2017–2021</span><div><h3>Repórter</h3><p>Pé na Estrada, SBT e Trucão Comunicações</p></div><a href="#case-penaestrada">Ver case</a></li>
+    <li><span class="ano">2016–2017</span><div><h3>Assistente de comunicação e PR</h3><p>Grupo Contatto</p></div><a href="#case-contatto">Ver case</a></li>
+  </ol>
+</section>
+
+<!-- ==================== FORMAÇÃO ==================== -->
+<section class="secao envelope" id="formacao" aria-labelledby="t-form">
+  <h2 class="titulo" id="t-form">Formação</h2>
+  <div class="formacao-grade ficha">
+    <div>
+      <h3>Acadêmica</h3>
+      <dl>
+        <div><dt>Especialização em Jornalismo Econômico, Negócios, Finanças e Política</dt><dd>Faculdade Cásper Líbero, 2026</dd></div>
+        <div><dt>Pós-graduação em Styling e Direção de Arte</dt><dd>Senac SP, 2022</dd></div>
+        <div><dt>Graduação em Comunicação Social, Jornalismo</dt><dd>FIAM-FAAM, 2018</dd></div>
+      </dl>
+      <figure>
+        <img src="fotos/masp.jpg" alt="Gravação de reportagem em frente ao MASP com câmera profissional" loading="lazy">
+        <figcaption>Gravação para um trabalho de telejornalismo na graduação, em frente ao MASP.</figcaption>
+      </figure>
+      <h3>Idiomas</h3>
+      <dl>
+        <div><dt>Inglês fluente</dt><dd>Cultura Inglesa (2015–2016) e Islington Centre for English, Londres (2019)</dd></div>
+        <div><dt>Italiano intermediário, com uso profissional</dt><dd>CEL Mauro de Oliveira (2012–2015) e Scuola Michelangelo, Florença (2014)</dd></div>
+        <div><dt>Espanhol intermediário</dt><dd>Aulas com professor nativo (2021–2023)</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3>Cursos</h3>
+      <ul>
+        <li>Jornalismo de Moda <span>Cásper Líbero, 2024</span></li>
+        <li>Influenciadores digitais: estratégias de ampliação de seguidores e criação de conteúdo <span>Cásper Líbero, 2024</span></li>
+        <li>Edição de vídeos <span>Academia Internacional de Cinema, 2022</span></li>
+        <li>Nova Economia, treinamento Folha de S.Paulo e iFood <span>Link School of Business, 2022</span></li>
+        <li>Oficina de Narrativa em Áudio <span>Vida de Jornalista, 2021</span></li>
+        <li>Jornalismo de Dados <span>Núcleo Jornalismo, 2019</span></li>
+        <li>Treinamento Google para Jornalistas <span>Google Brasil, 2019</span></li>
+        <li>Web Jornalismo e SEO <span>Belas Artes, 2018</span></li>
+        <li>Roteiro ficcional <span>FMU, 2015</span></li>
+      </ul>
+      <h3>Vivências internacionais</h3>
+      <dl>
+        <div><dt>Nova York e Washington, 2022</dt><dd>Imersão de moda, com pesquisa de tendências e produção editorial</dd></div>
+        <div><dt>Londres e Roma, 2019</dt><dd>Estudo de inglês e voluntariado</dd></div>
+        <div><dt>Florença, 2014</dt><dd>Estudo de italiano</dd></div>
+      </dl>
+      <h3>Ferramentas</h3>
+      <ul>
+        <li>Meta Ads, RD Station, GA4, Looker Studio, Chartbeat, Power BI, Python, Premiere, Wix e Nuvemshop</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== CONTATO ==================== -->
+<section class="contato" id="contato" aria-labelledby="t-contato">
+  <div class="envelope contato-grade">
+    <div>
+      <h2 id="t-contato">Vamos conversar</h2>
+      <a class="email" href="mailto:pietra_carvalho@hotmail.com">pietra_carvalho@hotmail.com</a>
+      <ul>
+        <li><a href="https://linkedin.com/in/pietralcantara" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://instagram.com/pietralcantara" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="CV_Pietra_Alcantara.pdf" download>Baixar currículo em PDF</a></li>
+      </ul>
+    </div>
+    <figure>
+      <img src="fotos/contato.jpg" alt="Pietra sorrindo, de óculos e camisa listrada" loading="lazy">
+    </figure>
+  </div>
+</section>
+<footer>
+  <div class="envelope"><span>Pietra Alcântara, jornalista</span><span>São Paulo</span></div>
+</footer>
+
+<script>
+// Menu no celular
+const btn = document.querySelector('.btn-menu');
+const menu = document.getElementById('menu');
+btn.addEventListener('click', () => {
+  const aberto = menu.classList.toggle('aberto');
+  btn.setAttribute('aria-expanded', aberto);
+  btn.textContent = aberto ? 'Fechar' : 'Menu';
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('aberto'); btn.setAttribute('aria-expanded', false); btn.textContent = 'Menu';
+}));
+
+// Vídeos do YouTube só carregam quando a pessoa clica
+document.querySelectorAll('.yt').forEach(b => b.addEventListener('click', () => {
+  const f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+  f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  f.title = b.getAttribute('aria-label') || 'Vídeo';
+  const wrap = document.createElement('div');
+  wrap.className = 'yt tocando';
+  wrap.appendChild(f);
+  b.replaceWith(wrap);
+}));
+
+// Reels do Instagram só carregam quando o case é aberto
+let igCarregado = false;
+document.querySelectorAll('details[data-instagram]').forEach(d => d.addEventListener('toggle', () => {
+  if (!d.open) return;
+  if (!igCarregado) {
+    const s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js'; s.async = true;
+    document.body.appendChild(s); igCarregado = true;
+  } else if (window.instgrm) { window.instgrm.Embeds.process(); }
+}));
+
+// Vídeo do desfile pausa para quem prefere menos movimento
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+}
+</script>
+</body>
+</html>
